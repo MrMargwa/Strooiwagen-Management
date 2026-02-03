@@ -8,9 +8,11 @@ use Framework\Template\PlatesRenderer;
 use Doctrine\ORM\EntityManagerInterface;
 use Framework\Template\RendererInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 
 return [
     ResponseFactoryInterface::class => DI\create(HttpFactory::class),
+    StreamFactoryInterface::class => DI\create(HttpFactory::class),
     RendererInterface::class => DI\create(PlatesRenderer::class),
     EntityManagerInterface::class => function () {
 

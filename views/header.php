@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+    <title>Strooiwagen Management</title>
 </head>
 <body>
 

@@ -16,7 +16,7 @@ class HomeController extends AbstractController
     public function index(): ResponseInterface
     {
         return $this->render("home/index", [
-            "name" => $this->dt->format("l")
+            "name" => $this->dt->format("d-m-Y")
         ]);
-    }
-}
+    } 
+}  

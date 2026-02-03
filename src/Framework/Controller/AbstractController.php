@@ -8,11 +8,15 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Framework\Template\RendererInterface;
 use DI\Attribute\Inject;
+use Psr\Http\Message\StreamFactoryInterface;
 
 abstract class AbstractController
 {
     #[Inject]
     private ResponseFactoryInterface $factory;
+
+    #[Inject]
+    private StreamFactoryInterface $streamFactory;
 
     #[Inject]
     private RendererInterface $renderer;
@@ -21,7 +25,7 @@ abstract class AbstractController
     {
         $contents = $this->renderer->render($template, $data);
 
-        $stream = $this->factory->createStream($contents);
+        $stream = $this->streamFactory->createStream($contents);
 
         $response = $this->factory->createResponse();
 
