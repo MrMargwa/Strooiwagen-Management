@@ -22,5 +22,9 @@ return function (Router $router) {
     // Roads
 
     $router->get("/wegen", [RoadController::class, "index"]);
+    $router->get("/wegen/{id:number}", [RoadController::class, "show"]);
+    $router->map(["GET", "POST"], "/wegen/create", [RoadController::class, "create"]);
+    $router->map(["GET", "POST"], "/wegen/{id:number}/edit", [RoadController::class, "edit"]);
+    $router->get("/wegen/{id:number}/delete", [RoadController::class, "delete"]);
 
 };

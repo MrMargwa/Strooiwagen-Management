@@ -57,16 +57,16 @@ CREATE TABLE `road_salting_frequency` (
 --
 
 INSERT INTO `roads` (`ID`, `name`, `location`, `salting_time`) VALUES
-(1, 'A7', 'Leeuwarden - Groningen', '06:00-22:00'),
-(2, 'A31', 'Leeuwarden - Sneek', '06:00-20:00'),
-(3, 'N31', 'Dokkum - Harlingen', '07:00-19:00'),
-(4, 'N33', 'Assen - Leeuwarden', '06:00-21:00'),
-(5, 'N356', 'Sneek - Bolsward', '07:00-18:00'),
-(6, 'N359', 'Heerenveen - Kampen', '06:00-20:00'),
-(7, 'Herenweg', 'Leeuwarden centrum', '07:00-19:00'),
-(8, 'Straatweg', 'Harlingen - Den Hoorn', '07:00-18:00'),
-(9, 'Lemsterweg', 'Lemmer - Sneek', '06:30-20:00'),
-(10, 'Franeker ringweg', 'Franeker centrum', '07:00-19:00');
+(1, 'A7', 'Leeuwarden - Groningen', '35'),
+(2, 'A31', 'Leeuwarden - Sneek', '40'),
+(3, 'N31', 'Dokkum - Harlingen', '25'),
+(4, 'N33', 'Assen - Leeuwarden', '55'),
+(5, 'N356', 'Sneek - Bolsward', '15'),
+(6, 'N359', 'Heerenveen - Kampen', '25'),
+(7, 'Herenweg', 'Leeuwarden centrum', '50'),
+(8, 'Straatweg', 'Harlingen - Den Hoorn', '55'),
+(9, 'Lemsterweg', 'Lemmer - Sneek', '15'),
+(10, 'Franeker ringweg', 'Franeker centrum', '15');
 
 --
 -- Dumping data for table `road_salting_frequency`
@@ -92,7 +92,17 @@ INSERT INTO `road_salting_frequency` (`ID`, `road_id`, `temp_min`, `temp_max`, `
 (17, 9, -5, 0, 3),
 (18, 9, -10, -5, 2),
 (19, 10, -5, 0, 4),
-(20, 10, -10, -5, 2);
+(20, 10, -10, -5, 2),
+(21, 1, -15, -10, 1),
+(22, 2, -15, -10, 1),
+(23, 3, -15, -10, 1),
+(24, 4, -15, -10, 1),
+(25, 5, -15, -10, 1),
+(26, 6, -15, -10, 1),
+(27, 7, -15, -10, 2),
+(28, 8, -15, -10, 1),
+(29, 9, -15, -10, 1),
+(30, 10, -15, -10, 1);
 
 --
 -- Indexes for dumped tables
