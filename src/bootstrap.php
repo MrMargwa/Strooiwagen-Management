@@ -16,6 +16,8 @@ require APP_ROOT . "/vendor/autoload.php";
 $dotenv = Dotenv::createImmutable(APP_ROOT);
 $dotenv->load();
 
+date_default_timezone_set("Europe/Amsterdam");
+
 $env = $_ENV["APP_ENV"] ?? "prod";
 
 require $env === "dev"

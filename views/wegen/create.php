@@ -4,7 +4,7 @@
   <div class="form-card">
     <div class="form-header">
       <h1>Nieuwe Weg</h1>
-      <button type="button" class="close-btn">&times;</button>
+      <button onclick="window.location.href='/'" type="button" class="close-btn">&times;</button>
     </div>
 
     <form method="POST" class="road-form">

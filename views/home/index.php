@@ -1,14 +1,5 @@
 <?php $this->layout("layout", ["title" => "Homepage - Strooiwagen Management"]) ?>
 
-<?php 
-$date = new DateTime();
-
-$dateOfNow = $date->format("d-m-Y");
-$timeOfNow = $date->format("H:i");
-
-
-?>
-
 <div id="homepage">
     <!-- Homepage Welcome -->
     <section class="home-welcome">
@@ -25,25 +16,32 @@ $timeOfNow = $date->format("H:i");
 <!-- Weather Status -->
     <section class="weather-bar">
         <div class="weather-item">
-            <h4>Gemiddelde Temperatuur</h4>
-            <div class="value"><?= $avgTemp ?> °C</div>
+      <h4>Temperatuur (Sneek)</h4>
+      <div class="value"><?= $sneekTemp ?> °C</div>
         </div>
         <div class="weather-item">
-            <h4>Wegen met strooien nodig</h4>
-            <div class="value"><?= count($weatherData) > 0 ? array_sum(array_map(fn($w) => $w['needsSalting'] ? 1 : 0, $weatherData)) : 0 ?></div>
+            <h4>Gevoelstemperatuur</h4>
+      <div class="value"><?= $feelTemp ?> °C</div>
         </div>
         <div class="weather-item">
-            <h4>Totaal wegen</h4>
-            <div class="value"><?= count($weatherData) ?></div>
+            <h4>Weeromschrijving</h4>
+      <div class="value"><?= $wheatherSummary ?></div>
         </div>
     </section>
 
     <!-- Card -->
     <section class="cards-grid">
     <div class="card stat">
-      <h3>Aantal strooiwagens</h3>
-      <div class="number">5</div>
+      <h3>Strooiwagens nodig</h3>
+      <div class="number"><?= $saltingWagonsNeeded ?></div>
     </div>
 
     <div class="card">
-      <h3>Gladheid
+      <h3><?= $lKop ?></h3>
+      <p>
+        <?= $lText ?>
+      </p>
+    </div>
+  </section>
+
+</div>
