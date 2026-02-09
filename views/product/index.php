@@ -1,5 +1,4 @@
 <?php $this->layout("layout", ["title" => "Products"]) ?>
-<?php echo"DIT IS TEST!!" ?>
 
 <h1>List of Products</h1>
 
