@@ -37,7 +37,7 @@
     </div>
 
     <div class="card">
-      <h3><?= $lKop ?></h3>
+      <h3><?= $verw ?></h3>
       <p>
         <?= $lText ?>
       </p>

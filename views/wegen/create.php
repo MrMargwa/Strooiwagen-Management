@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <button type="submit" class="submit-btn">Oplaan</button>
+      <button type="submit" class="submit-btn">Opslaan</button>
     </form>
   </div>
 </div>

@@ -21,7 +21,7 @@
         <tr onclick="window.location.href='/wegen/<?= $road->getId() ?>'" style="cursor: pointer;">
             <td><?= $road->getName() ?></td>
             <td><?= $road->getLocation() ?></td>
-            <td><?= $road->getSaltingTime() . "m" ?></td>
+            <td><?= $road->getSaltingTime() . " min" ?></td>
             <td><?= $road->getFrequencyForTemp(-5, 0) ?? '-' ?></td>
             <td><?= $road->getFrequencyForTemp(-10, -5) ?? '-' ?></td>
             <td><?= $road->getFrequencyForTemp(-15, -10) ?? '-' ?></td>
