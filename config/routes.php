@@ -7,11 +7,11 @@ use League\Route\Router;
 
 return function (Router $router) {
 
-    // Home
+    // Home Routes
 
     $router->get("/", [HomeController::class, "index"]);
 
-    // Products
+    // Products Routes
 
     $router->get("/products", [ProductController::class, "index"]);
 
@@ -19,7 +19,7 @@ return function (Router $router) {
 
     $router->map(["GET", "POST"], "/product/new", [ProductController::class, "create"]);
 
-    // Roads
+    // Roads Routes
 
     $router->get("/wegen", [RoadController::class, "index"]);
     $router->get("/wegen/{id:number}", [RoadController::class, "show"]);

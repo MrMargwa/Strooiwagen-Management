@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="/styles.css" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
             body {
                 display: flex;
@@ -9,9 +11,22 @@
                 height: 100vh;
                 margin: 0;
             }
+
+            .serverErr {
+                color: var(--swf-steenkool);
+                font-weight: 500
+            }
+
+            .serverErr a {
+                color: var(--swf-rood-rood);
+                font-weight: bold;
+            }
+
+            
         </style>
     </head>
     <body>
-        <p>Something went wrong.</p>
+
+        <span class="serverErr">Ga terug naar <a href="/">home</a></span>
     </body>
 </html>
