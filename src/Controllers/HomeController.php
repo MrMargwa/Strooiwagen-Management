@@ -22,12 +22,12 @@ class HomeController extends AbstractController
 
         // Get weather data for Sneek (default location)
         $sneekWeather = $this->getWeatherData($_ENV["PLAATS"]);
+
         $verw = $sneekWeather["verw"];
         $lText = $sneekWeather["lText"];
-        // $sneekTemp = -14;
         $sneekTemp = (int) ($sneekWeather['temp']);
         $sneekDesc = $sneekWeather['desc'];
-        $feelTemp = (int) $sneekWeather['gtemp'];
+        $sight = (int) $sneekWeather['sight'];
         $wheatherSummary = $sneekWeather['samenv'];
 
         $roadsNeedingSalting = [];
@@ -52,7 +52,7 @@ class HomeController extends AbstractController
             "time" => $this->dt->format("H:i"),
             "sneekTemp" => $sneekTemp,
             "sneekDescription" => $sneekDesc,
-            "feelTemp" => $feelTemp,
+            "sight" => $sight,
             "wheatherSummary" => $wheatherSummary,
             "verw" => $verw,
             "lText" => $lText,
@@ -70,9 +70,9 @@ class HomeController extends AbstractController
             $apiKey = $_ENV["WEERLIVE_API_KEY"] ?? "demo";
             $url = $_ENV["WEERLIVE_API_URL"] . urlencode($apiKey) . "&locatie=" . urlencode($location);
             $response = @file_get_contents($url);
-            
+
             if ($response === false) {
-                return ['temp' => 0, 'desc' => 'N/A', 'verw' => "Geen data beschikbaar...", 'Geen data beschikbaar...' => null];
+                return ['temp' => 0, 'desc' => 'N/A', 'verw' => 'Geen data beschikbaar...', 'lText' => null, 'sight' => 0];
             }
 
             $data = json_decode($response, true);
@@ -81,17 +81,17 @@ class HomeController extends AbstractController
                 return [
                     'temp' => $data['liveweer'][0]['temp'] ?? 0,
                     'desc' => $data['liveweer'][0]['omschrijving'] ?? 'N/A',
-                    'gtemp' => $data['liveweer'][0]['gtemp'] ?? 0,
+                    'sight' => $data['liveweer'][0]['zicht'] ?? 0,
                     'samenv' => $data['liveweer'][0]['samenv'] ?? 'N/A',
                     'verw' => $data['liveweer'][0]['verw'] ?? null,
                     'lText' => $data['liveweer'][0]['ltekst'] ?? null
                 ];
             }
         } catch (\Exception $e) {
-            return ['temp' => 0, 'desc' => 'N/A', 'verw' => null, 'lText' => null];
+            return ['temp' => 0, 'desc' => 'N/A', 'verw' => null, 'lText' => null, 'sight' => 0];
         }
 
-        return ['temp' => 0, 'desc' => 'N/A', 'verw' => null, 'lText' => null];
+        return ['temp' => 0, 'desc' => 'N/A', 'verw' => null, 'lText' => null, 'sight' => 0];
     }
 
     private function getSaltingFrequencyForTemp(Road $road, int $temp): int

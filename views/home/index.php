@@ -20,8 +20,8 @@
       <div class="value"><?= $sneekTemp ?> °C</div>
         </div>
         <div class="weather-item">
-            <h4>Gevoelstemperatuur</h4>
-      <div class="value"><?= $feelTemp ?> °C</div>
+            <h4>Zicht</h4>
+      <div class="value"><?= $sight ?>m</div>
         </div>
         <div class="weather-item">
             <h4>Weeromschrijving</h4>
